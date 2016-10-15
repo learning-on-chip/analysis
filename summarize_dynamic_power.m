@@ -1,8 +1,12 @@
-function dynamic_power(suite)
+function summarize_dynamic_power(suite)
   setup;
   if nargin < 1, suite = 'parsec'; end
   prefix = ['reference/workload/gainestown/', suite, '/'];
-  files = [list([prefix, 'small']) list([prefix, 'medium']) list([prefix, 'large'])];
+  files = [
+    list([prefix, 'small']) ...
+    list([prefix, 'medium']) ...
+    list([prefix, 'large']) ...
+  ];
   fprintf('%-20s %5s %10s\n', 'Benchmark', 'Units', 'Time, s');
   cores = zeros(length(files), 1);
   cache = zeros(length(files), 1);
@@ -27,7 +31,7 @@ function dynamic_power(suite)
   end
   scale = cores + cache;
   bar(100 * [cores ./ scale cache ./ scale], 'stacked');
-  title(sprintf('Dynamic Power (L3s %.2f%%)', 100 * mean(cache ./ scale)));
+  fprintf('Average contribution of L3s: %.2f%%\n', 100 * mean(cache ./ scale));
   ylim([0, 101]);
 end
 
