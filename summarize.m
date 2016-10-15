@@ -1,4 +1,4 @@
-function summarize_dynamic_power(suite)
+function summarize(suite)
   setup;
   if nargin < 1, suite = 'parsec'; end
   prefix = ['reference/workload/gainestown/', suite, '/'];

@@ -1,4 +1,4 @@
-function show_dynamic_power()
+function exemplify()
   setup;
   prefix = 'reference/workload/gainestown/cpu2006/large/';
   files = { ...
