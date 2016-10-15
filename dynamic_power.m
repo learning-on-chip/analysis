@@ -1,4 +1,5 @@
 function dynamic_power(suite)
+  setup;
   if nargin < 1, suite = 'parsec'; end
   prefix = ['reference/workload/gainestown/', suite, '/'];
   files = [list([prefix, 'small']) list([prefix, 'medium']) list([prefix, 'large'])];
