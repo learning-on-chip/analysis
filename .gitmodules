@@ -1,0 +1,3 @@
+[submodule "reference/workload"]
+	path = reference/workload
+	url = https://github.com/learning-on-chip/workload

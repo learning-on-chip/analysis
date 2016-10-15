@@ -1,5 +1,7 @@
 # Analysis
 
+The repository contains scripts for analyzing reference data.
+
 ## Contribution
 
 1. Fork the project.
