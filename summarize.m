@@ -1,11 +1,11 @@
 function summarize(suite)
   setup;
   if nargin < 1, suite = 'parsec'; end
-  prefix = ['reference/workload/gainestown/', suite, '/'];
+  folder = [prefix(), '/', suite, '/'];
   files = [
-    list([prefix, 'small']) ...
-    list([prefix, 'medium']) ...
-    list([prefix, 'large']) ...
+    list([folder, 'small']) ...
+    list([folder, 'medium']) ...
+    list([folder, 'large']) ...
   ];
   fprintf('%-20s %5s %10s\n', 'Benchmark', 'Units', 'Time, s');
   cores = zeros(length(files), 1);
@@ -13,7 +13,7 @@ function summarize(suite)
   for i = 1:length(files)
     [data, ~] = aggregate(files{i}, 'dynamic_power');
     [units, steps] = size(data);
-    name = strrep(files{i}, prefix, '');
+    name = strrep(files{i}, folder, '');
     name = strrep(name, '.sqlite3', '');
     fprintf('%-20s %5d %10.2f', name, units, 1e-3 * steps);
     total = sum(data(:));
