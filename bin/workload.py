@@ -1,7 +1,6 @@
 from database import Database
-import constant
+import constant, glob, os
 import numpy as np
-import os
 
 class Workload:
     def aggregate(path, column):
@@ -21,6 +20,10 @@ class Workload:
         path = "{}/{}.sqlite3".format(constant.WORKLOAD_ROOT, name)
         assert(os.path.exists(path))
         return path
+
+    def enumerate(name):
+        path = "{}/{}/*.sqlite3".format(constant.WORKLOAD_ROOT, name)
+        return glob.glob(path)
 
 def read_components(path):
     result = Database.execute(path, 'SELECT DISTINCT component_id FROM dynamic')

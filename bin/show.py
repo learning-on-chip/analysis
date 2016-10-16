@@ -1,12 +1,13 @@
 #!/usr/bin/env python3
 
+import matplotlib.pyplot as pp
+import numpy as np
 import os, sys
+
 sys.path.append(os.path.dirname(__file__))
 
 from workload import Workload
 import constant
-import matplotlib.pyplot as pp
-import numpy as np
 
 def main(name):
     data = Workload.aggregate(Workload.locate(name), 'dynamic_power')

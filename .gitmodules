@@ -1,6 +1,0 @@
-[submodule "reference/workload"]
-	path = reference/workload
-	url = https://github.com/learning-on-chip/workload
-[submodule "vendor/sqlite3"]
-	path = vendor/sqlite3
-	url = https://github.com/kyamagu/matlab-sqlite3-driver
