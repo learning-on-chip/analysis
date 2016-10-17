@@ -12,7 +12,8 @@ class Workload:
         for i, component_id in enumerate(component_ids):
             result = Database.execute(path, code, component_id)
             result = np.array(result).transpose()
-            if data is None: data = np.zeros([component_count, result.shape[1]])
+            if data is None:
+                data = np.zeros([component_count, result.shape[1]])
             data[i, :] = result
         return data
 

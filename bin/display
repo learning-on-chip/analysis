@@ -12,7 +12,8 @@ import constant
 def main(names):
     for name in names:
         process(name)
-        while not pp.waitforbuttonpress(): pass
+        while not pp.waitforbuttonpress():
+            pass
 
 def process(name):
     data = Workload.aggregate(Workload.locate(name), 'dynamic_power')
@@ -24,7 +25,8 @@ def process(name):
         pp.plot(time, data[i, :])
         pp.xlim([time[0], time[-1]])
         pp.ylabel('Power (W)')
-        if i == 0: pp.title(name)
+        if i == 0:
+            pp.title(name)
     pp.xlabel('Time (s)')
 
 main(sys.argv[1:])

@@ -32,14 +32,17 @@ def main(names, draw=True):
             sys.stdout.write(' %10.2e (%5.2f%%)' % (
                 local, 100 * local / total
             ))
-            if j in index: cores[i] += local
-            else: cache[i] += local
+            if j in index:
+                cores[i] += local
+            else:
+                cache[i] += local
         print()
     scale = cores + cache
     cores = 100 * cores / scale
     cache = 100 * cache / scale
     print('Average cache contribution: %.2f%%' % np.mean(cache))
-    if not draw: return
+    if not draw:
+        return
     index = list(range(count))
     pp.figure(figsize=(14, 6), facecolor='w', edgecolor='k')
     pp.bar(index, cores, color='b')
