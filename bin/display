@@ -27,5 +27,4 @@ def process(name):
         if i == 0: pp.title(name)
     pp.xlabel('Time (s)')
 
-if __name__ == '__main__':
-    main(sys.argv[1:])
+main(sys.argv[1:])

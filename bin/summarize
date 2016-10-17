@@ -47,5 +47,4 @@ def main(names, draw=True):
     pp.ylim([0, 101])
     pp.show()
 
-if __name__ == '__main__':
-    main(sys.argv[1:])
+main(sys.argv[1:])
