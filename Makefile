@@ -10,9 +10,9 @@ parsec := \
 all: parsec-small
 
 cpu2006-%:
-	./bin/display $(addprefix cpu2006/$*/,$(cpu2006))
+	./bin/display.py $(addprefix cpu2006/$*/,$(cpu2006))
 
 parsec-%:
-	./bin/display $(addprefix parsec/$*/,$(parsec))
+	./bin/display.py $(addprefix parsec/$*/,$(parsec))
 
 .PHONY: all cpu2006-* parsec-*
