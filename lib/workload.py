@@ -17,14 +17,14 @@ class Workload:
             data[i, :] = result
         return data
 
+    def enumerate(name):
+        path = "{}/{}/**/*.sqlite3".format(constant.WORKLOAD_ROOT, name)
+        return glob.glob(path, recursive=True)
+
     def locate(name):
         path = "{}/{}.sqlite3".format(constant.WORKLOAD_ROOT, name)
         assert(os.path.exists(path))
         return path
-
-    def enumerate(name):
-        path = "{}/{}/*.sqlite3".format(constant.WORKLOAD_ROOT, name)
-        return glob.glob(path)
 
 def read_components(path):
     result = Database.execute(path, 'SELECT DISTINCT component_id FROM dynamic')
