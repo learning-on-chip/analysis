@@ -1,13 +1,12 @@
 #!/usr/bin/env python3
 
-import matplotlib.pyplot as pp
-import numpy as np
 import os, sys
-
 sys.path.append(os.path.join(os.path.dirname(__file__), '..', 'lib'))
 
 from workload import Workload
 import constant
+import matplotlib.pyplot as pp
+import numpy as np
 
 def main(names, draw=True):
     paths = []
