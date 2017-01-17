@@ -1,4 +1,4 @@
-# Analysis
+# Reference Analysis
 
 The repository contains scripts for analyzing reference data.
 
